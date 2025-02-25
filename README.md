@@ -1,19 +1,18 @@
-
 ![Screenshot 2024-09-10 at 20 10 31](https://github.com/user-attachments/assets/d73cafe5-22a2-4356-944f-0f5601be9da8) ![Screenshot 2024-09-10 at 17 57 55](https://github.com/user-attachments/assets/b338d3e4-db6e-425a-8a13-1b2055ba2afc)
 
 ## AI-Rag-ChatBot-NextJS
 
-AI-Rag-ChatBot is a complete project example with RAGChat and Next.js 14, using Upstash Vector Database, Upstash Qstash, Upstash Redis, Dynamic Webpage Folder, Middleware, Typescript, Vercel AI SDK for the Client side Hook, Lucide-React for Icon, Shadcn-UI, Next-UI Library Plugin to modify TailwindCSS and deploy on Vercel. It is not just an AI, but also a pattern convension and provides reply super fast and it also can memorize all previous chat history from the Vector Storage so it doesn't have to reload the page again once its already indexed. 
+AI-Rag-ChatBot is a complete project example with RAGChat and Next.js 14, using Upstash Vector Database, Upstash Qstash, Upstash Redis, Dynamic Webpage Folder, Middleware, Typescript, Vercel AI SDK for the Client side Hook, Lucide-React for Icon, Shadcn-UI, Next-UI Library Plugin to modify TailwindCSS and deploy on Vercel. It is not just an AI, but also a pattern convention and provides reply super fast and it also can memorize all previous chat history from the Vector Storage so it doesn't have to reload the page again once its already indexed.
 
-**Note: To run this project, you must use the url on your localhost as: `http://localhost:3000/https:/www.wikipedia.org`
+\*\*Note: To run this project, you must use the url on your localhost as: `http://localhost:3000/https:/www.wikipedia.org`
 
-**Note: To check this webpage live, click here:** 
+**Note: To check this webpage live, click here:**
 
-## To Install Dependences
+## To Install Dependencies
 
 Before launching this web application, be sure to install all required dependencies, which are listed in the package.json file.
 
-To install all dependences, run this command from your project folder: `npm install`
+To install all dependencies, run this command from your project folder: `npm install`
 
 ## To Install NodeJS
 
@@ -21,14 +20,14 @@ Make sure you have NodeJS installed in your machine first, The installation inst
 
 ## To setup .env File
 
-After creating an accound in Upstash and generate Upstash Vector API Key, Upstash Qstash API Key, Upstash Redis API Key, then you must create an .env file in your project folder and save your API key or other sensetive info.
+After creating an account in Upstash and generate Upstash Vector API Key, Upstash Qstash API Key, Upstash Redis API Key, then you must create an .env file in your project folder and save your API key or other sensitive info.
 
-Example: 
+Example:
 
 ```
 UPSTASH_VECTOR_REST_URL=""
 
-UPSTASH_VECTOR_REST_TOKEN="
+UPSTASH_VECTOR_REST_TOKEN=""
 
 QSTASH_TOKEN=""
 
@@ -39,7 +38,7 @@ UPSTASH_REDIS_REST_TOKEN=""
 
 ## To Setup Upstash Vector Database, Upstash Qstash, Upstash Redis
 
-You need to create a Upstash Vector Database to acheive the REST Vector URL and REST Token. Also you need Qstash Token. And Redis to prevent from saving the same webpage or same vector saving in vector storage again.
+You need to create a Upstash Vector Database to achieve the REST Vector URL and REST Token. Also you need Qstash Token. And Redis to prevent from saving the same webpage or same vector saving in vector storage again.
 
 To install upstash/rag-chat: `npm install @upstash/rag-chat`
 
@@ -53,12 +52,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -85,7 +78,7 @@ NextJS provides to execute some logic/code before the user accesses the page by 
 
 ## To Install TailwindCSS
 
-By deafault tailwind use css order, to avaoid that, we use class merging intuative: `npm i tailwind-merge clsx`
+By default tailwind use css order, to avoid that, we use class merging intuitive: `npm i tailwind-merge clsx`
 
 ( For Further info, visit: https://tailwindcss.com/docs/guides/nextjs )
 
@@ -105,7 +98,7 @@ To use icon library: `npm i lucide-react`
 
 To use next-ui library: `npm i @nextui-org/react`
 
-For using next-ui library, you need to change tailwind contect. Go to your `tailwind.config.ts` file, the add this line in `config` class inside `content: [...]`, past it:
+For using next-ui library, you need to change tailwind content. Go to your `tailwind.config.ts` file, the add this line in `config` class inside `content: [...]`, past it:
 
 ```
 content: [
@@ -115,7 +108,7 @@ content: [
   ],
 ```
 
-Also add that on top after your import as pluging : `const { nextui } = require("@nextui-org/react");`
+Also add that on top after your import as plugin : `const { nextui } = require("@nextui-org/react");`
 
 And add the plugin in the bottom as default: `plugins: [require("tailwindcss-animate"), nextui()],`
 
