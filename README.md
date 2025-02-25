@@ -6,7 +6,7 @@ AI-Rag-ChatBot is a complete project example with RAGChat and Next.js 14, using 
 
 \*\*Note: To run this project, you must use the url on your localhost as: `http://localhost:3000/https:/www.wikipedia.org`
 
-**Note: To check this webpage live, click here:**
+**Online Live:** Still trying to fix the issue to deploy it on Vercel/Netlify.
 
 ## To Install Dependencies
 
