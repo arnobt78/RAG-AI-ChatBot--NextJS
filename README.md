@@ -14,8 +14,6 @@ Before launching this web application, be sure to install all required dependenc
 
 To install all dependencies, run this command from your project folder: `npm install`
 
-## To Install NodeJS
-
 Make sure you have NodeJS installed in your machine first, The installation instructions are here: https://nodejs.org/en/
 
 ## To setup .env File
