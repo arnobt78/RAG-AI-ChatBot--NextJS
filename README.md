@@ -1,144 +1,215 @@
-## RAG-AI-ChatBot-NextJS
+# RAG-AI-ChatBot--NextJS
 
 ![Screenshot 2024-09-10 at 20 10 31](https://github.com/user-attachments/assets/d73cafe5-22a2-4356-944f-0f5601be9da8) ![Screenshot 2024-09-10 at 17 57 55](https://github.com/user-attachments/assets/b338d3e4-db6e-425a-8a13-1b2055ba2afc)
 
-AI-Rag-ChatBot is a complete project example with RAGChat and Next.js 14, using Upstash Vector Database, Upstash Qstash, Upstash Redis, Dynamic Webpage Folder, Middleware, Typescript, Vercel AI SDK for the Client side Hook, Lucide-React for Icon, Shadcn-UI, Next-UI Library Plugin to modify TailwindCSS and deploy on Vercel. It is not just an AI, but also a pattern convention and provides reply super fast and it also can memorize all previous chat history from the Vector Storage so it doesn't have to reload the page again once its already indexed.
+---
 
-**Note:** To run this project on your machine, you must use the url on your localhost as: `http://localhost:3000/www.wikipedia.org`
+## Project Overview
 
-**Online Live:** https://ai-rag-chatbot-arnob.vercel.app/www.wikipedia.org
+**RAG-AI-ChatBot--NextJS** is a modern, production-ready Retrieval-Augmented Generation (RAG) ChatBot web application built with Next.js 14 and TypeScript. It leverages Upstash Vector Database, QStash, and Redis for scalable vector search and queuing, and provides a dynamic, extensible template for building AI-driven chat interfaces. The project is also integrated with Vercel AI SDK, TailwindCSS, Shadcn-UI, Lucide React, and NextUI for a seamless, beautiful, and performant user experience.
 
-## To Install Dependencies
+---
 
-Before launching this web application, be sure to install all required dependencies, which are listed in the package.json file.
+## Features
 
-To install all dependencies, run this command from your project folder: `npm install`
+- **Retrieval-Augmented Generation (RAG):** Combines LLMs with vector search for context-aware Q&A.
+- **Dynamic Webpage Support:** Insert any webpage dynamically for chat-based interaction and RAG processing.
+- **Scalable Vector Storage:** Uses Upstash Vector Database for efficient, serverless vector operations.
+- **Queue Management:** Upstash QStash handles background or scheduled tasks and message queues.
+- **Duplicate Prevention:** Upstash Redis checks and prevents duplicate webpage/vector entries.
+- **Modern UI/UX:** Built with TailwindCSS, Shadcn-UI, Lucide React icons, and NextUI for a clean, responsive interface.
+- **Middleware:** Next.js middleware enables request pre-processing and advanced routing.
+- **Live Demo:** Instantly try the app online.
+- **TypeScript:** Full type safety across the app.
+- **Vercel AI SDK:** For advanced client-side AI hooks and chat streaming.
 
-Make sure you have NodeJS installed in your machine first, The installation instructions are here: https://nodejs.org/en/
+---
 
-## To setup .env File
+## Live Demo
 
-After creating an account in Upstash and generate Upstash Vector API Key, Upstash Qstash API Key, Upstash Redis API Key, then you must create an .env file in your project folder and save your API key or other sensitive info.
+- **Localhost:** http://localhost:3000/www.wikipedia.org
+- **Online:** https://ai-rag-chatbot-arnob.vercel.app/www.wikipedia.org
 
-Example:
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation & Setup](#installation--setup)
+- [Usage Instructions](#usage-instructions)
+- [Environment Variables](#environment-variables)
+- [Integrations & Dependencies](#integrations--dependencies)
+- [Customization](#customization)
+- [Deployment](#deployment)
+- [Learning Resources](#learning-resources)
+
+---
+
+## Technology Stack
+
+- **Frontend:** Next.js 14, React, TypeScript, TailwindCSS, Shadcn-UI, NextUI, Lucide React
+- **Backend/Data:** Upstash Vector, Upstash Redis, Upstash QStash
+- **AI/LLM:** Vercel AI SDK, Retrieval-Augmented Generation
+- **Dev Tools:** Node.js, npm
+- **Deployment:** Vercel
+
+---
+
+## Project Structure
+
+```
+.
+├── app/                  # Main app directory (pages, API routes)
+│   └── [...url]/         # Dynamic route folder for website-based RAG
+│       └── page.tsx      # Dynamic RAG chat page
+├── components/           # UI Components
+├── lib/                  # Helper libraries and utilities
+├── public/               # Static assets (including images)
+├── styles/               # Tailwind and additional styles
+├── middleware.ts         # Middleware logic for pre-processing requests
+├── tailwind.config.ts    # TailwindCSS configuration
+├── .env                  # Environment variables (not committed)
+├── package.json          # Project metadata and dependencies
+└── README.md             # Project documentation
+```
+
+---
+
+## Installation & Setup
+
+### 1. Prerequisites
+
+- **Node.js**: [Install Node.js](https://nodejs.org/en/) (v18+ recommended)
+- **npm**: Comes with Node.js
+
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/arnobt78/RAG-AI-ChatBot--NextJS.git
+cd RAG-AI-ChatBot--NextJS
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Environment Variables
+
+- Sign up at [Upstash](https://upstash.com/) and create projects for Vector, QStash, and Redis.
+- Copy your API keys/URLs from the Upstash dashboard.
+- Create a `.env` file in the root folder:
 
 ```
 UPSTASH_VECTOR_REST_URL=""
-
 UPSTASH_VECTOR_REST_TOKEN=""
-
 QSTASH_TOKEN=""
-
 UPSTASH_REDIS_REST_URL=""
-
 UPSTASH_REDIS_REST_TOKEN=""
 ```
 
-## To Setup Upstash Vector Database, Upstash Qstash, Upstash Redis
+---
 
-You need to create a Upstash Vector Database to achieve the REST Vector URL and REST Token. Also you need Qstash Token. And Redis to prevent from saving the same webpage or same vector saving in vector storage again.
+## Usage Instructions
 
-To install upstash/rag-chat: `npm install @upstash/rag-chat`
-
-To install upstash/redis: `npm install @upstash/redis`
-
-( For Further info, visit: https://upstash.com/docs/vector/sdks/rag-chat/gettingstarted and https://console.upstash.com/vector )
-
-## Getting Started
-
-First, run the development server:
+### 1. Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
+- To test with a webpage, use: [http://localhost:3000/www.wikipedia.org](http://localhost:3000/www.wikipedia.org)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. Dynamic Webpage Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- To enable chat for any website, the app uses a dynamic route.
+- Create a folder: `app/[...url]/`
+- Add a page file: `page.tsx`
 
-## To Setup Webpage Dynamic
+### 3. Editing & Customization
 
-To use any webpage dynamically inserting in this AI Rag-Chat application, create a folder called `[...url]`, under the folder create a file called `page.tsx`
+- Main logic and UI: `app/[...url]/page.tsx` and `components/`
+- Tailwind and NextUI configuration: `tailwind.config.ts`
+- Middleware logic: `middleware.ts`
 
-## To Install Vercel AI SDK for Client Side Hook
+---
 
-To use a client side hook which is not built in React, coming from Vercel AI SDK: `npm install ai`
+## Integrations & Dependencies
 
-( For Further info, visit: https://www.npmjs.com/package/ai )
+- **Upstash Vector:** `npm install @upstash/rag-chat`
+- **Upstash Redis:** `npm install @upstash/redis`
+- **Upstash QStash:** Used for background job management.
+- **Vercel AI SDK:** `npm install ai`
+- **TailwindCSS:** `npm install tailwindcss`
+- **Shadcn-UI:** `npx shadcn-ui@latest init`
+- **Lucide React (Icons):** `npm i lucide-react`
+- **NextUI:** `npm i @nextui-org/react`
 
-## To Setup Middleware
+#### NextUI & Tailwind Integration:
 
-NextJS provides to execute some logic/code before the user accesses the page by using `middleware.ts` file which is included in this project.
+In `tailwind.config.ts`:
 
-( For Further info, visit: https://nextjs.org/docs/app/building-your-application/routing/middleware )
-
-## To Install TailwindCSS
-
-By default tailwind use css order, to avoid that, we use class merging intuitive: `npm i tailwind-merge clsx`
-
-( For Further info, visit: https://tailwindcss.com/docs/guides/nextjs )
-
-## To Install Shadcn-UI
-
-To use shadcn ui framework: `npx shadcn-ui@latest init`
-
-( For Further info, visit: https://ui.shadcn.com/docs/installation/next )
-
-## To Install Lucide-React Icon Library
-
-To use icon library: `npm i lucide-react`
-
-( For Further info, visit: https://lucide.dev/guide/packages/lucide-react )
-
-## To Install Next-UI Library
-
-To use next-ui library: `npm i @nextui-org/react`
-
-For using next-ui library, you need to change tailwind content. Go to your `tailwind.config.ts` file, the add this line in `config` class inside `content: [...]`, past it:
-
-```
+```js
 content: [
-  ...
-  ...
+  // ...your existing globs
   "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-Also add that on top after your import as plugin : `const { nextui } = require("@nextui-org/react");`
-
-And add the plugin in the bottom as default: `plugins: [require("tailwindcss-animate"), nextui()],`
-
-Example:
-
-```
-...
-...
-},
-
+],
+const { nextui } = require("@nextui-org/react");
 plugins: [require("tailwindcss-animate"), nextui()],
-
-} satisfies Config;
 ```
+[See NextUI Docs](https://nextui.org/docs/frameworks/nextjs) for more details.
 
-( For Further info, visit: https://nextui.org/docs/frameworks/nextjs )
+---
 
-## To Create A New Next.js React App
+## Customization
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- **Add More AI Providers:** Swap LLM sources in the API integration layer.
+- **Custom UI Themes:** Change Tailwind config or swap Shadcn/NextUI themes.
+- **Extend Middleware:** Add custom logic in `middleware.ts`.
+- **Component-based Development:** Easily add or modify components in `/components`.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy to Vercel for best results:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Deploy on Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app)
 
-## Deploy on Vercel
+See [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Learning Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Vercel AI SDK](https://www.npmjs.com/package/ai)
+- [Upstash Vector/Redis Docs](https://upstash.com/docs/vector/sdks/rag-chat/gettingstarted)
+- [Shadcn-UI Docs](https://ui.shadcn.com/docs/installation/next)
+- [TailwindCSS Docs](https://tailwindcss.com/docs/guides/nextjs)
+- [NextUI Docs](https://nextui.org/docs/frameworks/nextjs)
+
+---
+
+## Keywords
+
+`RAG`, `AI ChatBot`, `Next.js`, `TypeScript`, `Vercel`, `Upstash`, `Vector Database`, `Redis`, `QStash`, `TailwindCSS`, `Shadcn-UI`, `NextUI`, `Lucide React`, `Vercel AI SDK`, `Dynamic Routing`, `Middleware`, `Web Chatbot`, `Fullstack AI App`
+
+---
+
+## Screenshots
+
+Look Above
+
+---
+
+## License
+
+[MIT](LICENSE)
