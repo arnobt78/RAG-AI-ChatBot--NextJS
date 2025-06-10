@@ -113,6 +113,8 @@ UPSTASH_REDIS_REST_URL=""
 UPSTASH_REDIS_REST_TOKEN=""
 ```
 
+> ⚠️ **Note:** The provided example key may be expired. Please generate your own from your Uptash - Vector, QStash, and Redis account.
+
 ---
 
 ## Usage Instructions
